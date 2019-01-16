@@ -61,7 +61,11 @@ class WorkbinFileDownloader():
             fileName = file['FileName']
             filePath = folder_path + '/' + fileName
             fileID = file['ID']
-            self.downloadFileIfDoesntExist(fileName,fileID,filePath,folder_path)
+            # auto skip files greater than 100MB
+            if file['FileSize'] <= 100*1024*1024:
+                self.downloadFileIfDoesntExist(fileName,fileID,filePath,folder_path)
+            else:
+                print(fileName+" has size greater than 100MB, is auto-omitted.")
     
     def downloadFileIfDoesntExist(self,fileName,fileID,filePath,folder_path):
         if not os.path.exists(filePath):

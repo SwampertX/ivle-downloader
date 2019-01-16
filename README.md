@@ -1,20 +1,23 @@
-# IVLE Downloader written in Python
+# IVLE Downloader written in Python3
 
-As the saying goes, necessity is the mother of invention. Yj's original IVLEDownloader did not work for me on Ubuntu 16.04. Hence, I wrote this for anyone else who's suffering from the same problem, and cannot live without this amazingly helpful tool.
+This is a temporary solution to IVLE, since IVLE is going to be deprecated and replaced by LumiNUS in a while. 
 
-It's pretty basic now (without any fancy UI) but I'll get to that when I have time, or if someone requests it.
 
-Also, the code is not the cleanest and nicely documented because it was done in a rush, will update when time is available. (Not like anyone is going to read this anyway)
+Please note that this requires python 3 to run.
 
 ## Instructions
 
 ```
-git clone git@github.com:Waffleboy/IVLE-EEEE.git
+git clone git@github.com:SwampertX/ivle-downloader.git
 pip install -r requirements.txt
 ```
 
 
-Then, set the `FOLDER_DOWNLOAD_LOCATION` to your specified folder, fill in your `LAPI API` key, `IVLE username` and `password`, then just run
+Then, make a copy of the `config.json` file by running
+``` cp config.json.sample config.json	```
+
+
+In config.json, set the `FOLDER_DOWNLOAD_LOCATION` to your specified folder, fill in your `LAPI API` key, `IVLE username` and `password`, then just run
 
 ```
 python main.py

@@ -1,0 +1,7 @@
+{
+	"FOLDER_DOWNLOAD_LOCATION" : "~/nus/",
+	"API_KEY" : "",
+	"IVLE_LOGIN" : "e12345678",
+	"IVLE_PASS" : "password",
+	"IGNORE_LIST" : ["NUS1000"]
+}

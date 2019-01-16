@@ -5,7 +5,7 @@ Created on Sat Aug  6 01:27:13 2016
 @author: waffleboy
 """
 
-import requests,os
+import requests,os,json
 # Token
 import ivle_token_generator
 # downloader from workbins
@@ -14,11 +14,14 @@ import workbin_files_downloader
 #==============================================================================
 #                               Options
 #==============================================================================
-FOLDER_DOWNLOAD_LOCATION = '/storage/NUS_STUFF/LectureTutorials/IVLE'
-API_KEY = os.environ['IVLE_LAPI_KEY']
-IVLE_LOGIN = 'a0130737'
-IVLE_PASS = os.environ['IVLE_PASS']
-IGNORE_LIST = set(["OSA1003"])
+json_file = open('config.json')
+params = json.load(json_file)
+FOLDER_DOWNLOAD_LOCATION = params['FOLDER_DOWNLOAD_LOCATION']  
+API_KEY = params['API_KEY']  
+IVLE_LOGIN = params['IVLE_LOGIN']  
+IVLE_PASS = params['IVLE_PASS']  
+IGNORE_LIST = params['IGNORE_LIST']  
+
 headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0'}
 TOKEN = ivle_token_generator.get_token(API_KEY,IVLE_LOGIN,IVLE_PASS,headers)
 #==============================================================================
